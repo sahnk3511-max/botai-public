@@ -1,2 +1,27 @@
-# botai-public
-Public Railway-ready starter for a Saudi-Arabic Claude Discord assistant.
+# botai-public — مساعد ديسكورد باللهجة السعودية
+
+بوت ديسكورد يستخدم Claude للإجابة باللهجة السعودية، تقديم اقتراحات، وتجهيز أفكار وسيناريوهات لمقاطع الفيديو.
+
+## الأوامر
+- `/اسأل` — اسأل سؤالًا، مع سياق محادثة مؤقت.
+- `/اقترح` — احصل على خمسة اقتراحات عملية.
+- `/أفكار_فيديو` — أفكار وعناوين وسيناريوهات أو برومبتات للفيديو.
+- `/مسح_المحادثة` — امسح سياق محادثتك المؤقت.
+
+**تنبيه:** لا ينشئ البوت ملف فيديو فعليًا؛ يلزم ربط خدمة توليد فيديو مستقلة.
+
+## الإعداد
+1. أنشئ تطبيقًا وبوتًا من [Discord Developer Portal](https://discord.com/developers/applications)، وخذ Bot Token وApplication ID.
+2. أنشئ مفتاح API من [Anthropic Console](https://console.anthropic.com/).
+3. على الاستضافة، أضف المتغيرات: `DISCORD_TOKEN` و`DISCORD_APPLICATION_ID` و`ANTHROPIC_API_KEY`. اختياريًا أضف `DISCORD_GUILD_ID` لتسجيل الأوامر مباشرة في سيرفر الاختبار، و`ANTHROPIC_MODEL` لاختيار نموذج.
+4. ادعُ البوت إلى سيرفرك بصلاحيات `bot` و`applications.commands`.
+5. أمر التشغيل هو `npm start`.
+
+لا تضع التوكنات أو مفاتيح API في ملفات عامة. المحادثات مؤقتة في ذاكرة التشغيل وتُمسح عند إعادة التشغيل.
+
+## تشغيل محلي
+```bash
+npm install
+cp .env.example .env
+npm start
+```
